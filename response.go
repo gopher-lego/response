@@ -11,8 +11,8 @@ func Success(c *gin.Context, data interface{}) {
 }
 
 // Normal logic fail
-func Failure(c *gin.Context, data interface{}) {
-	c.JSON(http.StatusOK, jsonify(data, -1, "Failure"))
+func Failure(c *gin.Context, msg string) {
+	c.JSON(http.StatusOK, jsonify(nil, -1, msg))
 }
 
 // Reject access with header status
